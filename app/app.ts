@@ -19,9 +19,23 @@ class ItemCtrl implements IItem{
     name:string;
     done:boolean; 
     
-    constructor() {
-         this.name = "Milk";
-         this.done = false;
+    constructor(name:string,done:boolean) {
+         this.name = name;
+         this.done = done;
+    }
+}
+
+var food:IItem[]=[ new ItemCtrl('milk',false),new ItemCtrl('eggs',false),new ItemCtrl('butter',false)]
+
+interface IItems{
+    items: IItem[];
+}
+
+class ItemsCtrl implements IItems{
+    items:IItem[];
+
+    constructor(){
+        this.items=food;
     }
 }
 
@@ -40,15 +54,26 @@ class HeaderCtrl implements IHeader{
 function header():ng.IDirective {
     var directive: ng.IDirective = {
         controller:HeaderCtrl,
-        controllerAs: 'item',
+        controllerAs: 'header',
         restrict: 'E',
-        templateUrl: './app/item.html'
+        templateUrl: './app/header.html'
     };
     return directive;
 
 }
 
-app.controller('ItemCtrl',ItemCtrl);
+function item():ng.IDirective{
+    var directive: ng.IDirective = {
+        // controller:ItemCtrl,
+        // controllerAs: 'item',
+        restrict: 'E',
+        templateUrl: './app/item.html'
+    };
+    return directive;
+}
+
+// app.controller('ItemCtrl',ItemCtrl);
 
 // app.controller('HeaderCtrl',HeaderCtrl);
 app.directive("header",header);
+app.directive("item",item);
