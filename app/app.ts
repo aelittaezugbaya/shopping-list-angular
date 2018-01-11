@@ -37,6 +37,18 @@ class HeaderCtrl implements IHeader{
     }
 }
 
+function header():ng.IDirective {
+    var directive: ng.IDirective = {
+        controller:HeaderCtrl,
+        controllerAs: 'item',
+        restrict: 'E',
+        templateUrl: './app/item.html'
+    };
+    return directive;
+
+}
+
 app.controller('ItemCtrl',ItemCtrl);
 
-app.controller('HeaderCtrl',HeaderCtrl);
+// app.controller('HeaderCtrl',HeaderCtrl);
+app.directive("header",header);
