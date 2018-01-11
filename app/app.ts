@@ -25,4 +25,18 @@ class ItemCtrl implements IItem{
     }
 }
 
+interface IHeader{
+    text:string;
+}
+
+class HeaderCtrl implements IHeader{
+    text:string;
+
+    constructor(){
+        this.text="Shopping List";
+    }
+}
+
 app.controller('ItemCtrl',ItemCtrl);
+
+app.controller('HeaderCtrl',HeaderCtrl);
