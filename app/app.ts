@@ -73,9 +73,7 @@ function item():ng.IDirective{
 }
 
 function list():ng.IDirective{
-    var directive: ng.Directive ={
-        controller:ItemsCtrl,
-        controllerAs: 'list',
+    var directive: ng.IDirective ={
         restrict: 'E',
         templateUrl:'./app/list.html'
     }
