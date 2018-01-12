@@ -15,11 +15,12 @@
 <body ng-app="shopping-list" >
     <div class="container">
            <header></header>
-        <div class="list-group" ng-controller="ItemsCtrl as items" >
-        
-            <item class="list-group-item" ng-repeat="food in items.items"></item>
-               
-        </div>
+            <!-- <div class="list-group" ng-controller="ItemsCtrl as items" >
+            
+                <item class="list-group-item" ng-repeat="food in items.items"></item>
+                
+            </div> -->
+            <list ng-controller="ItemsCtrl as list"></list>
     </div>
     
 </body>

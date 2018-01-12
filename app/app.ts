@@ -72,8 +72,20 @@ function item():ng.IDirective{
     return directive;
 }
 
+function list():ng.IDirective{
+    var directive: ng.Directive ={
+        controller:ItemsCtrl,
+        controllerAs: 'list',
+        restrict: 'E',
+        templateUrl:'./app/list.html'
+    }
+    return directive;
+}
+
 // app.controller('ItemCtrl',ItemCtrl);
 
 // app.controller('HeaderCtrl',HeaderCtrl);
+app.controller('ItemsCtrl',ItemsCtrl)
 app.directive("header",header);
 app.directive("item",item);
+app.directive('list',list);
